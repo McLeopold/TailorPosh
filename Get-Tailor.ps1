@@ -39,5 +39,6 @@
         }
     }
 
+    $ProgressPreference='SilentlyContinue'
     tailor $files | highlight
 }
