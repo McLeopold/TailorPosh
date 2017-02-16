@@ -1,7 +1,9 @@
 ﻿function Get-Tailor {
     param
     (
-        [string[]]$files
+        [Parameter(Mandatory=$true)]
+        [string[]]$files,
+        [long]$tail = 1
     )
 
     function highlight
@@ -31,14 +33,15 @@
     {
         param
         (
-            [string[]]$files
+            [string[]]$files,
+            [long]$tail
         )
         foreach -parallel ($file in $files) 
         {
-            Get-Content -Tail 1 $file -wait
+            Get-Content -Tail $tail $file -wait
         }
     }
 
     $ProgressPreference='SilentlyContinue'
-    tailor $files | highlight
+    tailor $files $tail | highlight
 }
