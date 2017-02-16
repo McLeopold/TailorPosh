@@ -1,0 +1,20 @@
+﻿{
+    "rules": [
+        {
+            "match": "FATAL",
+            "color": "Red"
+        },
+        {
+            "match": "WARNING",
+            "color": "Yellow"
+        },
+        {
+            "match": "DEBUG",
+            "color": "Gray"
+        }
+    ],
+    "default": {
+        "enabled": true,
+        "color": "White"
+    }
+}
